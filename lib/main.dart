@@ -37,11 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
     _password.dispose();
     super.dispose();
   }
+
   void _checkPassword() async {
-      var response = await http.get('https://api.pwnedpasswords.com/pwnedpassword/${_password.text}');
-      setState(() {
-        _count = response.body;
-      });
+    var response = await http
+        .get('https://api.pwnedpasswords.com/pwnedpassword/${_password.text}');
+    setState(() {
+      _count = response.body;
+    });
   }
 
   @override
